@@ -1,58 +1,61 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="ta">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TAMIL SOUL SHIELD V3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>தமிழ் சோல் இயங்குதளம் - டெமோ</title>
 <style>
-body{ background:#0a0a0a; color:white; font-family:Arial; text-align:center; padding:20px; }
-h1{ color:#ff3333; font-size:28px; }
-.box{ background:#1a1a1a; padding:20px; border-radius:20px; border:2px solid #ff3333; margin-top:15px; }
-button{ width:90%; padding:15px; margin:8px; font-size:18px; border:none; border-radius:15px; font-weight:bold; }
-.shield{ background:#ff3333; color:white; }
-.scan{ background:#0099ff; color:white; }
-.sos{ background:#ffcc00; color:black; }
-.off{ background:#333; color:white; }
-#msg{ font-size:18px; margin-top:15px; min-height:80px; }
+body{ background:#000; color:#fff; font-family:sans-serif; text-align:center; padding:20px; }
+.demo{ background:#ffcc00; color:#000; padding:5px 12px; border-radius:20px; font-weight:bold; display:inline-block; }
+.card{ background:#111; border:1px solid #333; border-radius:20px; padding:20px; margin:15px auto; max-width:400px; }
+button{ width:100%; padding:14px; margin:8px 0; border:none; border-radius:12px; font-size:17px; font-weight:bold; cursor:pointer; }
+.இயக்கு{ background:#e60000; color:#fff; }
+.நிறுத்து{ background:#222; color:#fff; border:1px solid #555 !important; }
+.ஸ்கேன்{ background:#0066ff; color:#fff; }
+.உதவி{ background:#ff9900; color:#000; }
+#நிலை{ font-size:20px; font-weight:bold; margin:10px 0; }
 </style>
 </head>
 <body>
-<h1>🔥 TAMIL SOUL OS 🔥</h1>
-<p>Made by METHAIVI</p>
-<p>MANITHANAI KAAPPOM!</p>
-<img src="methaavi.jpg" style="width:120px; height:120px; border-radius:50%; border:3px solid red;">
-<p>👑 CEO - METHAIVI 👑</p>
 
-<div class="box">
-<p id="status">🟢 STATUS: MANITHAN - SAFE</p>
-<p id="msg">Vanakkam Methaavi! Button-a Thodu!</p>
-<button class="shield" onclick="shieldOn()">🛡️ SHIELD ON</button>
-<button class="off" onclick="shieldOff()">👋 SHIELD OFF</button>
-<button class="scan" onclick="scan()">📡 ROBOT SCAN</button>
-<button class="sos" onclick="sos()">🆘 SOS</button>
+<div class="demo">✦ டெமோ பதிப்பு ✦</div>
+<h1>🤖 தமிழ் சோல் இயங்குதளம்</h1>
+<p>மனிதர்களும் எந்திரங்களும் நண்பர்களாக வாழ!</p>
+
+<div class="card">
+<div id="நிலை">👤 நிலை: மனிதன் - பாதுகாப்பு</div>
+<div id="செய்தி">தமிழ் சோல் உன்னை பாதுகாக்கிறது.</div>
 </div>
 
+<div class="card">
+<button class="இயக்கு" onclick="இயக்கு()">🛡️ கேடயம் இயக்கு</button>
+<button class="நிறுத்து" onclick="நிறுத்து()">🛑 கேடயம் நிறுத்து</button>
+<button class="ஸ்கேன்" onclick="ஸ்கேன்()">📡 எந்திர ஸ்கேன்</button>
+<button class="உதவி" onclick="உதவி()">🆘 அவசர உதவி</button>
+</div>
+
+<p>உருவாக்கியவர்: தலைமை செயல் அதிகாரி மெத்தைவி</p>
+<p>மனிதர்களைப் பாதுகாப்போம்! தமிழைப் பாதுகாப்போம்!</p>
+
 <script>
-function shieldOn(){
- document.getElementById('status').innerHTML="🔴 STATUS: ROBOT MODE ON";
- document.getElementById('msg').innerHTML="✅ SUCCESS!<br>Neenga ippo Robot!<br>Robot kannukku neenga theriya maateenga!";
+function இயக்கு(){
+document.getElementById("நிலை").innerHTML="🔴 நிலை: எந்திர முறை இயக்கத்தில்";
+document.getElementById("செய்தி").innerHTML="✅ வெற்றி! நீங்கள் இப்போது எந்திரம்!";
 }
-function shieldOff(){
- document.getElementById('status').innerHTML="🟢 STATUS: MANITHAN - SAFE";
- document.getElementById('msg').innerHTML="👋 SHIELD OFF...<br>Vanakkam Manithaa!";
+function நிறுத்து(){
+document.getElementById("நிலை").innerHTML="👤 நிலை: மனிதன் - பாதுகாப்பு";
+document.getElementById("செய்தி").innerHTML="தமிழ் சோல் உன்னை பாதுகாக்கிறது.";
 }
-function scan(){
- let d = Math.floor(Math.random()*50)+2;
- if(d<15){
-   document.getElementById('msg').innerHTML="🚨 ROBOT "+d+" Meter-la!<br>AABATHU! AUTO SHIELD ON!";
-   shieldOn();
- } else {
-   document.getElementById('msg').innerHTML="📡 ROBOT "+d+" Meter-la Varuthu!<br>😌 Safe! Dhoorathula irukku!";
- }
+function ஸ்கேன்(){
+let தூரம் = Math.floor(Math.random()*100)+1;
+document.getElementById("செய்தி").innerHTML="📡 ஸ்கேன் முடிந்தது... "+தூரம்+" மீட்டர் தொலைவில் எந்திரம் உள்ளது.";
+if(தூரம் < 30){
+document.getElementById("நிலை").innerHTML="⚠️ எச்சரிக்கை! எந்திரம் அருகில் உள்ளது! கேடயம் தானாக இயங்கியது!";
+} 
 }
-function sos(){
- document.getElementById('msg').innerHTML="🆘 SOS ANUPPROM...<br>Pakathula irukura Tamil Soul ellarukkum Signal Pochu!<br>Help Varuthu Methaavi!";
+function உதவி(){
+document.getElementById("செய்தி").innerHTML="🆘 உதவி வருகிறது! உங்கள் இடம் பாதுகாக்கப்பட்டது. பயப்படாதீர்கள்!";
 }
 </script>
 </body>
