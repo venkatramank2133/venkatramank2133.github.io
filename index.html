@@ -62,5 +62,26 @@ function sos(){document.getElementById('sos').innerText="🆘 SOS SENT! Help is 
   <script>
 if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js'); }
 </script>
+  <div style="border:2px solid #ff2d55; border-radius:15px; padding:15px; margin:15px; background:#111; text-align:center;">
+  <h3 style="color:white;">6. Emergency Message</h3>
+  <input id="msgInput" type="text" placeholder="Message Type பண்ணு Bro..." style="width:90%; padding:12px; border-radius:10px; border:none; margin-bottom:10px;">
+  <br>
+  <button onclick="saveMsg()" style="padding:12px 25px; background:#00ff88; border:none; border-radius:10px; font-weight:bold; font-size:16px;">📩 SAVE MESSAGE</button>
+  <div id="msgList" style="margin-top:10px; color:white; text-align:left;"></div>
+</div>
+<script>
+function saveMsg(){
+  let input = document.getElementById('msgInput');
+  let msg = input.value.trim();
+  if(msg === ""){ alert("Blank-ஆ Save பண்ண முடியாது Bro!"); return; }
+  let div = document.createElement('div');
+  div.style = "background:#333; padding:10px; margin:5px 0; border-radius:8px;";
+  div.innerText = "💬 " + msg;
+  document.getElementById('msgList').appendChild(div);
+  localStorage.setItem('lastMsg', msg);
+  input.value = "";
+  alert("Saved Bro! ✅");
+}
+</script>
 </body>
   </html>
