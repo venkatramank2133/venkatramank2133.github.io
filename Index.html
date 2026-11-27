@@ -58,5 +58,8 @@ function shieldOn(){document.getElementById('shield').innerText="🛡️ SHIELD 
 function shieldOff(){document.getElementById('shield').innerText="Shield: OFF"; document.getElementById('status').innerText="👤 STATUS: MANITHAN - SAFE";}
 function sos(){document.getElementById('sos').innerText="🆘 SOS SENT! Help is Coming! Location Shared to Nearby Drivers!";}
 </script>
+  <script>
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js'); }
+</script>
 </body>
   </html>
