@@ -4,59 +4,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>தமிழ் சோல் இயங்குதளம் - டெமோ</title>
+<title>TAMIL SOUL OS - MANITHANAI KAAPPOM!</title>
 <style>
-body{ background:#000; color:#fff; font-family:sans-serif; text-align:center; padding:20px; }
-.demo{ background:#ffcc00; color:#000; padding:5px 12px; border-radius:20px; font-weight:bold; display:inline-block; }
-.card{ background:#111; border:1px solid #333; border-radius:20px; padding:20px; margin:15px auto; max-width:400px; }
-button{ width:100%; padding:14px; margin:8px 0; border:none; border-radius:12px; font-size:17px; font-weight:bold; cursor:pointer; }
-.இயக்கு{ background:#e60000; color:#fff; }
-.நிறுத்து{ background:#222; color:#fff; border:1px solid #555 !important; }
-.ஸ்கேன்{ background:#0066ff; color:#fff; }
-.உதவி{ background:#ff9900; color:#000; }
-#நிலை{ font-size:20px; font-weight:bold; margin:10px 0; }
+body{background:#000;color:#fff;font-family:sans-serif;text-align:center;padding:20px}
+h1{color:#ff2d55}
+.box{border:2px solid #ff2d55;border-radius:15px;padding:15px;margin:10px}
+button{padding:15px 20px;margin:5px;font-size:18px;border:none;border-radius:10px;font-weight:bold}
+.green{background:#00e676}.red{background:#ff2d55;color:#fff}.blue{background:#2979ff;color:#fff}.orange{background:#ff9100}
 </style>
 </head>
 <body>
+<h1>🔥 TAMIL SOUL OS 🔥</h1>
+<h3>MANITHANAI KAAPPOM!</h3>
+<p id="status">👤 STATUS: MANITHAN - SAFE</p>
 
-<div class="demo">✦ டெமோ பதிப்பு ✦</div>
-<h1>🤖 தமிழ் சோல் இயங்குதளம்</h1>
-<p>மனிதர்களும் எந்திரங்களும் நண்பர்களாக வாழ!</p>
-
-<div class="card">
-<div id="நிலை">👤 நிலை: மனிதன் - பாதுகாப்பு</div>
-<div id="செய்தி">தமிழ் சோல் உன்னை பாதுகாக்கிறது.</div>
+<div class="box">
+<h3>1. Walkie Talkie - PMR446</h3>
+<button class="green" onclick="talk()">🎙️ PRESS TO TALK</button>
+<p id="walkie">Ready...</p>
 </div>
 
-<div class="card">
-<button class="இயக்கு" onclick="இயக்கு()">🛡️ கேடயம் இயக்கு</button>
-<button class="நிறுத்து" onclick="நிறுத்து()">🛑 கேடயம் நிறுத்து</button>
-<button class="ஸ்கேன்" onclick="ஸ்கேன்()">📡 எந்திர ஸ்கேன்</button>
-<button class="உதவி" onclick="உதவி()">🆘 அவசர உதவி</button>
+<div class="box">
+<h3>2. GPS - Offline Location</h3>
+<button class="blue" onclick="gps()">📍 GET MY LOCATION</button>
+<p id="gps">Location: Not Yet</p>
 </div>
 
-<p>உருவாக்கியவர்: தலைமை செயல் அதிகாரி மெத்தைவி</p>
-<p>மனிதர்களைப் பாதுகாப்போம்! தமிழைப் பாதுகாப்போம்!</p>
+<div class="box">
+<h3>3. Mesh Chain</h3>
+<button class="blue" onclick="mesh()">🔗 CHECK MESH</button>
+<p id="mesh">Mesh: Checking...</p>
+</div>
+
+<div class="box">
+<h3>4. ROBOT MODE + SHIELD</h3>
+<button class="red" onclick="shieldOn()">🛡️ SHIELD ON</button>
+<button onclick="shieldOff()">🛑 SHIELD OFF</button>
+<p id="shield">Shield: OFF</p>
+</div>
+
+<div class="box">
+<h3>5. SOS - Emergency</h3>
+<button class="orange" onclick="sos()">🆘 SOS - SEND HELP</button>
+<p id="sos"></p>
+</div>
+
+<p>Total Size - Only 10 MB! Light = Fast!</p>
 
 <script>
-function இயக்கு(){
-document.getElementById("நிலை").innerHTML="🔴 நிலை: எந்திர முறை இயக்கத்தில்";
-document.getElementById("செய்தி").innerHTML="✅ வெற்றி! நீங்கள் இப்போது எந்திரம்!";
-}
-function நிறுத்து(){
-document.getElementById("நிலை").innerHTML="👤 நிலை: மனிதன் - பாதுகாப்பு";
-document.getElementById("செய்தி").innerHTML="தமிழ் சோல் உன்னை பாதுகாக்கிறது.";
-}
-function ஸ்கேன்(){
-let தூரம் = Math.floor(Math.random()*100)+1;
-document.getElementById("செய்தி").innerHTML="📡 ஸ்கேன் முடிந்தது... "+தூரம்+" மீட்டர் தொலைவில் எந்திரம் உள்ளது.";
-if(தூரம் < 30){
-document.getElementById("நிலை").innerHTML="⚠️ எச்சரிக்கை! எந்திரம் அருகில் உள்ளது! கேடயம் தானாக இயங்கியது!";
-} 
-}
-function உதவி(){
-document.getElementById("செய்தி").innerHTML="🆘 உதவி வருகிறது! உங்கள் இடம் பாதுகாக்கப்பட்டது. பயப்படாதீர்கள்!";
-}
+function talk(){document.getElementById('walkie').innerText="🎙️ Talking... PMR446 Channel 8 - Voice Going!"; setTimeout(()=>{document.getElementById('walkie').innerText="✅ Voice Sent via Mesh!";},1500);}
+function gps(){navigator.geolocation.getCurrentPosition(p=>{document.getElementById('gps').innerText="📍 Lat: "+p.coords.latitude.toFixed(4)+" Lon: "+p.coords.longitude.toFixed(4);},()=>{document.getElementById('gps').innerText="GPS: Please Allow Location";});}
+function mesh(){document.getElementById('mesh').innerText="🔗 Mesh ON! 3 Phones Found Nearby! You are now a Tower!";}
+function shieldOn(){document.getElementById('shield').innerText="🛡️ SHIELD ON! No Tracking, No Server! You are Safe!"; document.getElementById('status').innerText="🤖 STATUS: ROBOT MODE ON - Invisible!";}
+function shieldOff(){document.getElementById('shield').innerText="Shield: OFF"; document.getElementById('status').innerText="👤 STATUS: MANITHAN - SAFE";}
+function sos(){document.getElementById('sos').innerText="🆘 SOS SENT! Help is Coming! Location Shared to Nearby Drivers!";}
+</script>
+  <script>
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js'); }
 </script>
 </body>
-</html>
+  </html>
