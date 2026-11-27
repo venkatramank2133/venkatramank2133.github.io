@@ -47,7 +47,7 @@ Bro, see how our Final App will be now!
 1. Walkie Talkie - PMR446 Voice
 2. GPS - Offline Location
 3. Mesh Chain - Phones themselves become Tower
-4. Offline Map - Tirupati to Chennai
+  
 5. ROBOT MODE - No Tracking, No Server
 6. SHIELD ON - 100% Offline Protection
 7. SOS - For Emergency
